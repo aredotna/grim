@@ -25,7 +25,7 @@ module Grim
         "-dBATCH", "-dNOPAUSE", "-dNOPROMPT", "-dMaxBitmap=500000000",
         "-dDOINTERPOLATE", "-dAlignToPixels=0", "-dGridFitTT=2", "-sDEVICE=jpeg",
         "-dTextAlphaBits=4", "-dGraphicsAlphaBits=4", "-dUseCIEColor", "-dNOTRANSPARENCY",
-        "-dUseCropBox", "-r#{quality.to_s}", "-dFirstPage=#{index}", "-dLastPage=#{index}",
+        "-dUseCropBox", "-r#{quality.to_s}", "-dFirstPage=#{index + 1}", "-dLastPage=#{index + 1}",
         "-sOutputFile=#{path}", "#{Shellwords.shellescape(pdf.path)}"]
 
       command.unshift("PATH=#{File.dirname(@ghostscript_path)}:#{ENV['PATH']}") if @ghostscript_path
