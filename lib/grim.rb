@@ -55,6 +55,7 @@ end
 require 'grim/pdf'
 require 'grim/page'
 require 'grim/image_magick_processor'
+require 'grim/ghost_script_processor'
 require 'grim/multi_processor'
 
 Grim.processor = Grim::ImageMagickProcessor.new
