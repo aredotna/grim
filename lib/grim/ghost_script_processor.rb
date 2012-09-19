@@ -26,7 +26,7 @@ module Grim
         "-dDOINTERPOLATE", "-dAlignToPixels=0", "-dGridFitTT=2", "-sDEVICE=jpeg",
         "-dTextAlphaBits=4", "-dGraphicsAlphaBits=4", "-dUseCIEColor", "-dNOTRANSPARENCY",
         "-dUseCropBox", "-r#{quality.to_s}", "-dFirstPage=#{index + 1}", "-dLastPage=#{index + 1}",
-        "-sOutputFile=#{path}", "#{Shellwords.shellescape(pdf.path)}"]
+        "-sOutputFile=#{Shellwords.shellescape(path)}", "#{Shellwords.shellescape(pdf.path)}"]
 
       command.unshift("PATH=#{File.dirname(@ghostscript_path)}:#{ENV['PATH']}") if @ghostscript_path
 
